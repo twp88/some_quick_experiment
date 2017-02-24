@@ -12,9 +12,9 @@ feature 'reviews' do
       fill_in 'Thoughts', with: 'Pretty shitty chicken'
       select '3', from: 'Rating'
       click_button 'Leave Review'
+      click_link 'KFC'
 
       expect(page).to have_content 'Pretty shitty chicken'
-      expect(current_path).to eq '/restaurants'
     end
   end
 

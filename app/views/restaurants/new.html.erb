@@ -8,4 +8,17 @@
 
 <h1><%= @yep %></h1>
 
+<% if @restaurant.errors.any? %>
+  < section id='errors'>
+  <h2><%= pluralize(@restaurant.errors.count, 'error') %> prohibited from this restaurant from being saved.</h2>
+    <ul>
+      <% @restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  < /section >
+<% end %>
+
+
+
 <a href= '/restaurants'>Back</a>

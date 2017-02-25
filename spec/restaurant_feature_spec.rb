@@ -90,4 +90,17 @@ feature 'restaurants' do
     end
   end
 
+  context 'checking the validations sitch' do
+    scenario 'should reject a restaurant with less that three letters' do
+      visit '/restaurants'
+      click_link 'Add a restaurant'
+      fill_in 'Name', with: 'bd'
+      fill_in 'Description', with: 'freems frroooms'
+      click_button 'Create Restaurant'
+
+      expect(page).not_to have_content 'bd'
+      expect(page).to have_content 'error'
+    end
+  end
+
 end

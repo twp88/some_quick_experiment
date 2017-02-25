@@ -53,6 +53,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :test do
+  gem 'rspec-collection_matchers'
   gem 'rspec-rails'
   gem 'capybara'
 end
